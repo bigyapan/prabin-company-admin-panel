@@ -1,0 +1,46 @@
+{
+   "all":{
+      "home":"Дом",
+      "about":"О нас",
+      "shop":"магазин",
+      "requestQuote":"сделать запрос"
+      
+   },
+   "footer":{
+      "ctaText":"Вы довольны тем, что мы предлагаем? Спросите бесплатную цитату",
+      "ctaButton":"Спросите цитату",
+      "address":"Адрес",
+      "addressValue":"ООО Пролифик 108811, город Москва, км Киевское Шоссе 22-Й (П Московский),двлд. 4 стр. 2, помещ. блок г, этаж 4 помещ. офис 407г ",
+      "phone":"фона",
+      "phoneValue":"+79266029325",
+      "email":"е-мейл",
+      "social":"социальные медиа",
+      "allRight":"все права защищены",
+            "terms":"Ru Terms of Use",
+            "legal":"Ru Legal Disclaimer",
+            "privacyPolicy":"Ru Privacy Policy"
+
+   },
+   "features":{
+      "trusted":"Доверенный",
+      "whyChoose":"Почему нужно выбрать нас ?",
+      
+            "1":{
+                "title":" Ru Excellent Services",
+                "description":" Ru On Time delivery and easy delivery tracking."
+            },
+            "2":{
+                "title":"Ru Satisfied Customers",
+                "description":"Ru We work on trust and maintain it thoroughly."
+            },
+            "3":{
+                "title":"Ru Competitive Price",
+                "description":"Ru We are able to provide you in the least price to our customer."
+            },
+            "4":{
+                "title":"Ru Quality Work",
+                "description":" Ru We work tirelessly to deliver optimal quality of work"
+            }
+
+   }
+}

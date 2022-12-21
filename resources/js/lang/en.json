@@ -1,0 +1,197 @@
+{
+        "all":{"office":"Office",
+        "placeOrder":"Place Order",
+        "headquater":"Gautam Basmati Rice Headquater",
+        "site":"Website",
+             "home":"Home",
+            "about":"About Us",
+            "shop":"Shop",
+            "requestQuote":"Request a Quote",
+            "tagLine":"Dedication towards Quality Food ",
+            "feature1":"Global and On time Delivery",
+            "basmati":"Basmati Rice",
+            "shortDescription":"Basmati is the king of long grain rice varieties. It is believed that it owes its unique taste and delicate aroma (\u201cbasmati\u201d in Hindi means \u201cfragrant\u201d) to the special soil, climate and even air of India, where it is grown."
+        ,
+        "ourProducts":"Our Products",
+        "ourProductsDescription":"From the cleanest and finest milles in India, Highest export Quality long grain rice.",
+    "getCustom":"Want Your Own Custom Branding?",
+    "getCustomText":"We provide custom branding for your company and products."},
+    
+        "footer":{
+            "ctaText":"Are you happy with what we offer? Ask for Free Quote",
+            "ctaButton":"Order Directly",
+            "address":"Address",
+            "addressValue":"Prolific Ltd 108811, Russia, Moscow, Moskovsky settlement, 22nd km. Kievskoe shosse, household 4, building 2, bldg. G, floor 4, office 407G",
+            "phone":"Phone",
+            "phoneValue":"+79266029325",
+            "email":"Email",
+            "social":"Social",
+            "allRight":"All Rights Reserved by",
+            "terms":"Terms of Use",
+            "legal":"Legal Disclaimer",
+            "privacyPolicy":"Privacy Policy"
+         },
+         "features":{
+            "trusted":"Trusted",
+            "whyChoose":"Why Choose Us?",
+            "1":{
+                "title":"Excellent Services",
+                "description":"On Time delivery and easy delivery tracking."
+            },
+            "2":{
+                "title":"Satisfied Customers",
+                "description":"We work on trust and maintain it thoroughly."
+            },
+            "3":{
+                "title":"Competitive Price",
+                "description":"We are able to provide you in the least price to our customer."
+            },
+            "4":{
+                "title":"Quality Work",
+                "description":"We work tirelessly to deliver optimal quality of work"
+            }
+
+         },
+"cook":{
+      "instruction":"COOKING INSTRUCTIONS",
+      "recommendation":"Recommendations",
+      "tips":"Before cooking, rinse the rice thoroughly with water so that the rice cooks faster, it can be soaked for 30 minutes."
+      ,"methods":{
+        "boiling":{
+            "mdiIcon":"mdi-pot-steam-outline",
+            "title":"Boiling",
+            "method":"Take 1 cup of rice (200 g) and 6-8 cups of water, boil after boiling, stirring occasionally. Reduce heat and simmer, uncovered, for 12-14 minutes. Evaporate water well and serve."
+        },
+        "cookingPot":{
+            "mdiIcon":"mdi-food-takeout-box-outline",
+            "title":"Cooking in a pot",
+            "method":"Take 1 cup of rice (200 g) pour 1.5 cups of water (375 ml), put on fire, bring to a boil, stirring occasionally. Continue to cook for 12-14 minutes over low heat. Turn off the heat and leave covered for 5-10 minutes."
+        },
+        "microwave":{
+            "mdiIcon":"mdi-microwave",
+            "title":"Microwave",
+            "method":"Take 1 cup of rice (200 g) and pour 1.5 cups of water (375 ml) into a microwave-safe bowl. Cook on moderately high heat in the microwave for 15 minutes. Let stand 5 minutes before serving. Stir."
+        },
+        "riceCooker":{
+            "mdiIcon":"mdi-stove",
+            "title":"Electronic rice cooker",
+            "method":"Place 1 cup (200g) of pre-soaked rice into the rice cooker. Add the measured amount of water. Turn on the rice cooker. The rice cooker automatically switches from \"Cook\" to \"Keep Warm\". Let the rice steam on the Keep Warm setting before serving."
+        }
+      },
+      "note":{
+        "title":"Note",
+        "value":{
+            "1":"Basmati rice may require slightly more or less water depending on its hardness.",
+            "2":"Add 1 tablespoon vegetable oil, butter or margarine and salt to taste."
+        }
+      }
+         },
+         "contact":{
+            "quotationRequest":"Quotation Request",
+            "quotationDescription":"Please fill up the form to know more about our products. Also, white label brand for your orders are available.",
+            "quickContact":"Quick Contact",
+            "submit":"Submit",
+            "name":{
+                "title":"Name",
+                "placeHolder":"Your Name Here",
+                "hint":""
+            },
+            
+            "email":{
+                "title":"E-Mail",
+                "placeHolder":"Your E-Mail Here",
+                "hint":"Your Business E-mail here."
+            }
+            ,
+            
+            "message":{
+                "title":"Message",
+                "placeHolder":"Your Message Here",
+                "hint":""
+            },
+            
+            
+            "phone":{
+                "title":"Phone Number",
+                "placeHolder":"",
+                "hint":"Your Phone Number"
+            }
+            ,
+            
+            "incoterms":{
+                "title":"Incoterms",
+                "placeHolder":"Your Message Here",
+                "hint":""
+            },
+            
+            "container":{
+                "title":"Container Size",
+                "placeHolder":"Your Message Here",
+                "hint":""
+            },
+            
+            "port":{
+                "title":"Port",
+                "placeHolder":"Your Recieving Port",
+                "hint":"Your Recieving Port"
+            },
+            
+            "brand":{
+                "title":"Brand",
+                "placeHolder":"Select Brand",
+                "hint":""
+            },
+            
+            "packagingQty":{
+                "title":"Packaging & Qty",
+                "placeHolder":"Your Message Here",
+                "hint":""
+            },
+            
+            "brandDesign":{
+                "title":"Your Brand Design",
+                "placeHolder":"Your Message Here",
+                "hint":"Your Brand & Packaging Design"
+            },
+            
+            "brandName":{
+                "title":"Brand Name",
+                "placeHolder":"Your Message Here",
+                "hint":"Information About Your Brand"
+            }
+            
+         },
+         "nutrition":{
+            "title":"Basmati ensures the normal functioning of the gastrointestinal tract due to fiber. The starch in rice helps maintain blood sugar levels. The high phosphorus content maintains bone strength. And the high content of carbohydrates and the gradual release of energy makes this product indispensable in the diet of athletes, as well as people with high physical and mental stress. Basmati rice is completely hypoallergenic, and therefore has practically no contraindications for consumption.",
+            
+            "shortTitle":"Highy Nutritious","1":{
+                "name":"Country Of Origin",
+                "value":"India"
+            },
+            "2":{
+                "name":"Ingredients",
+                "value":"100% basmati rice"
+            },
+            "3":{
+                "name":"         Nutritional value per 100g. product:",
+                "value":"  "
+            },
+            "4":{
+                "name":"Energy value",
+                "value":"355 kcal / 1482 kJ."
+            },
+            "5":{
+                "name":"Proteins",
+                "value":"8g"
+            },
+            "6":{
+                "name":"Fats",
+                "value":"0.50g"
+            },
+            "7":{
+                "name":"Carbohydrates",
+                "value":"78.50g"
+            }
+         }
+
+    }
