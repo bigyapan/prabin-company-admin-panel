@@ -225,7 +225,9 @@ export default {
             search: null,
             viewQuote: false,
             quote: {
-                brand: {},
+                brand: {
+                    is_customer:0,
+                },
                 incoterm: {},
                 packaging: {},
                 container: {},
