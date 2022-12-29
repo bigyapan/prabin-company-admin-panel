@@ -72,7 +72,7 @@
                                                 !!item.brand ? item.brand.title : 'N/A'
                                             }}
                                             <v-chip small color="primary"
-                                                    v-if="!!item.brand ? item.brand.is_customer:0">Custom
+                                                    v-if="!!item.brand ? item.brand.is_customer:false">Custom
                                             </v-chip>
                                         </v-list-item-title>
                                         <v-list-item-subtitle>{{
