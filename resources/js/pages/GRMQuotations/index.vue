@@ -70,7 +70,10 @@
                                     <v-list-item-content>
                                         <v-list-item-title>{{
                                                 !!item.brand ? item.brand.title : 'N/A'
-                                            }} <v-chip small color="primary" v-if="item.brand.is_customer === 1">Custom</v-chip>
+                                            }}
+                                            <v-chip small color="primary"
+                                                    v-if="!!item.brand ? item.brand.is_customer:0">Custom
+                                            </v-chip>
                                         </v-list-item-title>
                                         <v-list-item-subtitle>{{
                                                 !!item.packaging ? item.packaging.title : 'N/A'
@@ -116,7 +119,7 @@
                                 <v-row>
                                     <v-col cols="7">
                                         <v-card flat color="accent">
-                                            <v-card-text >
+                                            <v-card-text>
                                                 <v-container class="ma-0 pa-0" fluid>
                                                     <v-row>
                                                         <v-col cols="12">
@@ -143,7 +146,8 @@
                                     </v-col>
                                     <v-col cols="5">
                                         <v-card flat color="accent" class="pa-2">
-                                            <v-img @click="overlay = !overlay" :src="`/storage/images/gautam-rice-mill/brands/${quote.brand.image}`"
+                                            <v-img @click="overlay = !overlay"
+                                                   :src="`/storage/images/gautam-rice-mill/brands/${quote.brand.image}`"
                                                    alt="Brand Image" height="205"></v-img>
                                         </v-card>
                                     </v-col>
@@ -151,7 +155,7 @@
                             </v-col>
                             <v-col cols="12">
                                 <v-card flat color="accent">
-                                    <v-card-text >
+                                    <v-card-text>
                                         <v-container class="ma-0 pa-0" fluid>
                                             <v-row>
                                                 <v-col cols="12">
@@ -190,7 +194,8 @@
                                     </v-btn>
                                 </v-col>
                                 <v-col cols="12">
-                                    <v-img  contain height="90vh" :src="`/storage/images/gautam-rice-mill/brands/${quote.brand.image}`"
+                                    <v-img contain height="90vh"
+                                           :src="`/storage/images/gautam-rice-mill/brands/${quote.brand.image}`"
                                            alt="Brand Image"></v-img>
                                 </v-col>
                             </v-row>
@@ -225,14 +230,13 @@ export default {
             search: null,
             viewQuote: false,
             quote: {
-                brand: {
-                },
+                brand: {},
                 incoterm: {},
                 packaging: {},
                 container: {},
             },
             selected: [],
-            overlay:false,
+            overlay: false,
         }
     },
     computed: {
