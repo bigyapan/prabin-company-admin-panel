@@ -70,7 +70,7 @@
                                     <v-list-item-content>
                                         <v-list-item-title>{{
                                                 !!item.brand ? item.brand.title : 'N/A'
-                                            }} <v-chip small color="primary" v-if="item.brand.is_customer">Custom</v-chip>
+                                            }} <v-chip small color="primary" v-if="item.brand.is_customer === 1">Custom</v-chip>
                                         </v-list-item-title>
                                         <v-list-item-subtitle>{{
                                                 !!item.packaging ? item.packaging.title : 'N/A'
