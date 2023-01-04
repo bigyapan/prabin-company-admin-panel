@@ -22,7 +22,7 @@ class GrmBrandController extends Controller
      */
     public function __construct(ResponseRepository $rr)
     {
-        $this->middleware('auth:api')->except(['index']);
+        $this->middleware('auth:api')->except(['index', 'show']);
         $this->responseRepository = $rr;
 
     }

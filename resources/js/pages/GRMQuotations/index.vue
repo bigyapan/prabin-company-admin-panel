@@ -185,21 +185,20 @@
                         </v-row>
                     </v-container>
                     <v-overlay @click="overlay = false" opacity="0.95" :value="overlay">
-                        <v-container fluid>
-                            <v-row>
-                                <v-spacer></v-spacer>
-                                <v-col cols="auto">
+                        <v-container style="width:100vw" fluid>
+                            <v-card flat color="transparent">
+                                <v-card-title>
+                                    <v-spacer></v-spacer>
                                     <v-btn @click.stop.prevent="overlay = false" depressed fab x-small color="error">
-                                        <v-icon>fa-solid fa-xmark</v-icon>
+                                        <v-icon>fas fa-xmark</v-icon>
                                     </v-btn>
-                                </v-col>
-                                <v-col cols="12">
-                                    <v-img contain height="90vh"
+                                </v-card-title>
+                                <v-card-text>
+                                    <v-img contain height="88vh"
                                            :src="`/storage/images/gautam-rice-mill/brands/${quote.brand.image}`"
                                            alt="Brand Image"></v-img>
-                                </v-col>
-                            </v-row>
-
+                                </v-card-text>
+                            </v-card>
                         </v-container>
                     </v-overlay>
                 </v-card-text>
