@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers\api\v1;
 
+use App\Helpers\CollectionHelper;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\GrmPackagingResource;
+use App\Models\GrmIncoterm;
 use App\Models\GrmPackaging;
 use App\Repositories\ResponseRepository;
 use Exception;
@@ -29,10 +31,10 @@ class GrmPackagingController extends Controller
      *
      * @return JsonResponse
      */
-    public function index(): JsonResponse
+    public function index(Request $request): JsonResponse
     {
         try {
-            return $this->responseRepository->ResponseSuccess(GrmPackagingResource::collection(GrmPackaging::all()), 'Packaging retrieved successfully.');
+            return $this->responseRepository->ResponseSuccess(GrmPackagingResource::make(CollectionHelper::getData($request,GrmPackaging::class)), 'Packaging retrieved successfully.');
         } catch (Exception $e) {
             return $this->responseRepository->ResponseError(null, $e->getMessage(), JsonResponse::HTTP_INTERNAL_SERVER_ERROR);
         }

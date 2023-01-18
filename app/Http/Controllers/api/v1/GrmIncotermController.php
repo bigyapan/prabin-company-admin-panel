@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\api\v1;
 
+use App\Helpers\CollectionHelper;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\GrmIncotermResource;
 use App\Models\GrmIncoterm;
@@ -29,10 +30,10 @@ class GrmIncotermController extends Controller
      *
      * @return JsonResponse
      */
-    public function index(): JsonResponse
+    public function index(Request $request): JsonResponse
     {
         try {
-            return $this->responseRepository->ResponseSuccess(GrmIncotermResource::collection(GrmIncoterm::all()), 'Incoterms retrieved successfully.');
+            return $this->responseRepository->ResponseSuccess(GrmIncotermResource::make(CollectionHelper::getData($request,GrmIncoterm::class)), 'Incoterms retrieved successfully.');
         } catch (Exception $e) {
             return $this->responseRepository->ResponseError(null, $e->getMessage(), JsonResponse::HTTP_INTERNAL_SERVER_ERROR);
         }

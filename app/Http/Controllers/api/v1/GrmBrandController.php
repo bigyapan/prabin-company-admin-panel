@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers\api\v1;
 
+use App\Helpers\CollectionHelper;
 use App\Helpers\UploadHelper;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\GrmBrandResource;
 use App\Models\GrmBrand;
+use App\Models\GrmQuote;
 use App\Repositories\ResponseRepository;
 use Exception;
 use Illuminate\Http\JsonResponse;
@@ -32,11 +34,12 @@ class GrmBrandController extends Controller
      *
      * @return JsonResponse
      */
-    public function index(): JsonResponse
+    public function index(Request $request)
     {
         try {
-            return $this->responseRepository->ResponseSuccess(GrmBrandResource::collection(GrmBrand::all()), 'Brands retrieved successfully.',);
-        } catch (Exception $e) {
+            return $this->responseRepository->ResponseSuccess(GrmBrandResource::make(CollectionHelper::getData($request, GrmBrand::class)), 'Brands retrieved successfully.',);
+        } catch
+        (Exception $e) {
             return $this->responseRepository->ResponseError(null, $e->getMessage(), JsonResponse::HTTP_INTERNAL_SERVER_ERROR);
         }
     }
@@ -78,6 +81,24 @@ class GrmBrandController extends Controller
     }
 
     /**
+     * Remove the specified resource from storage.
+     *
+     * @param GrmBrand $grmBrand
+     * @return JsonResponse
+     */
+    public function destroy(GrmBrand $grmBrand)
+    {
+        try {
+            UploadHelper::deleteFile('storage/images/gautam-rice-mill/brands/' . $grmBrand->image);
+            GrmQuote::where('brand_id', $grmBrand->id)->update(['brand_id' => null]);
+            $grmBrand->delete();
+            return $this->responseRepository->ResponseSuccess($grmBrand, 'Brand deleted successfully.',);
+        } catch (Exception $e) {
+            return $this->responseRepository->ResponseError(null, $e->getMessage(), JsonResponse::HTTP_INTERNAL_SERVER_ERROR);
+        }
+    }
+
+    /**
      * Update the specified resource in storage.
      *
      * @param Request $request
@@ -88,31 +109,19 @@ class GrmBrandController extends Controller
     {
         try {
             $data = $request->all();
-            if ($data['image'] != null && $data['image'] != '') {
+            if ($data['image'] != null && $data['image'] != '' && $data['image'] != 'no_update') {
                 $titleShort = Str::slug(substr($data['title'], 0, 20));
                 $data['image'] = UploadHelper::update('image', $data['image'], $titleShort . '-' . time(), 'storage/images/gautam-rice-mill/brands', $grmBrand->image);
             } else {
-                $data['image'] = $grmBrand->image;
+                if ($data['image'] == 'no_update') {
+                    $data['image'] = $grmBrand->image;
+                } else {
+                    UploadHelper::deleteFile('storage/images/gautam-rice-mill/brands/' . $grmBrand->image);
+                    $data['image'] = null;
+                }
             }
             $grmBrand->update($data);
             return $this->responseRepository->ResponseSuccess(new GrmBrandResource($grmBrand), 'Brand updated successfully.',);
-        } catch (Exception $e) {
-            return $this->responseRepository->ResponseError(null, $e->getMessage(), JsonResponse::HTTP_INTERNAL_SERVER_ERROR);
-        }
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param GrmBrand $grmBrand
-     * @return JsonResponse
-     */
-    public function destroy(GrmBrand $grmBrand)
-    {
-        try {
-            UploadHelper::deleteFile('storage/images/gautam-rice-mill/brands/' . $grmBrand->image);
-            $grmBrand->delete();
-            return $this->responseRepository->ResponseSuccess($grmBrand, 'Brand deleted successfully.',);
         } catch (Exception $e) {
             return $this->responseRepository->ResponseError(null, $e->getMessage(), JsonResponse::HTTP_INTERNAL_SERVER_ERROR);
         }

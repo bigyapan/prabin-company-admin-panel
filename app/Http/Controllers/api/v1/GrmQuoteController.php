@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\api\v1;
 
+use App\Helpers\CollectionHelper;
 use App\Helpers\UploadHelper;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\GrmQuoteResource;
@@ -25,16 +26,15 @@ class GrmQuoteController extends Controller
         $this->middleware('auth:api')->except(['store']);
         $this->responseRepository = $rr;
     }
-
     /**
      * Display a listing of the resource.
      *
      * @return JsonResponse
      */
-    public function index(): JsonResponse
+    public function index(Request $request): JsonResponse
     {
         try {
-            return $this->responseRepository->ResponseSuccess(GrmQuoteResource::collection(GrmQuote::with('brand', 'incoterm', 'packaging', 'container')->get()), 'Quotes retrieved successfully.',);
+            return $this->responseRepository->ResponseSuccess(GrmQuoteResource::make(CollectionHelper::getData($request,GrmQuote::class,['brand', 'incoterm', 'packaging', 'container'])), 'Quotes retrieved successfully.',);
         } catch (Exception $e) {
             return $this->responseRepository->ResponseError(null, $e->getMessage(), JsonResponse::HTTP_INTERNAL_SERVER_ERROR);
         }

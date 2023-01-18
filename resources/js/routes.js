@@ -1,11 +1,14 @@
 import VueRouter from "vue-router";
-import store from './store'
 import App from "./App.vue";
 import Dashboard from "./pages/Dashboard.vue";
 import Login from "./pages/Login.vue";
-import GRMContacts from "./pages/GRMContacts/index.vue";
-import GRMQuotations from "./pages/GRMQuotations/index.vue";
-import Settings from "./pages/Settings.vue";
+import GrmContacts from "./pages/GrmContacts";
+import GrmQuotations from "./pages/GrmQuotations";
+import Settings from "./pages/Settings";
+import GrmBrands from "./pages/GrmBrands";
+import GrmContainers from "./pages/GrmContainers";
+import GrmIncoterms from "./pages/GrmIncoterms";
+import GrmPackagings from "./pages/GrmPackagings";
 
 const routes = [
     {
@@ -21,20 +24,44 @@ const routes = [
             },
             {
                 path: "/grm-contacts",
-                name: "GRMContacts",
-                component: GRMContacts,
+                name: "GrmContacts",
+                component: GrmContacts,
                 meta: {requiresAuth: true}
             },
             {
                 path: "/grm-quotations",
-                name: "GRMQuotations",
-                component: GRMQuotations,
+                name: "GrmQuotations",
+                component: GrmQuotations,
                 meta: {requiresAuth: true}
             },
             {
                 path: "/settings",
                 name: "Settings",
                 component: Settings,
+                meta: {requiresAuth: true}
+            },
+            {
+                path: "/grm-brands",
+                name: "GrmBrands",
+                component: GrmBrands,
+                meta: {requiresAuth: true}
+            },
+            {
+                path: "/grm-containers",
+                name: "GrmContainers",
+                component: GrmContainers,
+                meta: {requiresAuth: true}
+            },
+            {
+                path: "/grm-incoterms",
+                name: "GrmIncoterms",
+                component: GrmIncoterms,
+                meta: {requiresAuth: true}
+            },
+            {
+                path: "/grm-packagings",
+                name: "GrmPackagings",
+                component: GrmPackagings,
                 meta: {requiresAuth: true}
             },
         ],
@@ -72,7 +99,7 @@ router.beforeEach((to, from, next) => {
                     path: '/',
                     params: {nextUrl: to.fullPath}
                 })
-            }else{
+            } else {
                 next()
             }
         } else {

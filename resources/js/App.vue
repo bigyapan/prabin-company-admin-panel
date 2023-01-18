@@ -39,4 +39,8 @@ export default {
 ::-webkit-scrollbar-thumb {
     background-color: #9e9e9e;
 }
+
+.v-data-footer {
+    border-top: 0 !important;
+}
 </style>

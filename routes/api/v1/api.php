@@ -7,6 +7,7 @@ use App\Http\Controllers\api\v1\GrmContainerController;
 use App\Http\Controllers\api\v1\GrmIncotermController;
 use App\Http\Controllers\api\v1\GrmPackagingController;
 use App\Http\Controllers\api\v1\GrmQuoteController;
+use App\Http\Controllers\api\v1\ResourceController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -29,3 +30,4 @@ Route::apiResource('grm-incoterms', GrmIncotermController::class);
 Route::apiResource('grm-packagings', GrmPackagingController::class);
 Route::apiResource('grm-quotes', GrmQuoteController::class);
 Route::apiResource('grm-brands', GrmBrandController::class);
+Route::get('get-resources', [ResourceController::class, 'getResources']);

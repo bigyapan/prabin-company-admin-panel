@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers\api\v1;
 
+use App\Helpers\CollectionHelper;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\GrmContactResource;
 use App\Models\GrmContact;
+use App\Models\GrmIncoterm;
 use App\Repositories\ResponseRepository;
 use Exception;
 use Illuminate\Http\JsonResponse;
@@ -28,10 +30,10 @@ class GrmContactController extends Controller
      *
      * @return JsonResponse
      */
-    public function index()
+    public function index(Request $request)
     {
         try {
-            return $this->responseRepository->ResponseSuccess(GrmContactResource::collection(GrmContact::all()), 'Contacts retrieved successfully.');
+            return $this->responseRepository->ResponseSuccess(GrmContactResource::make(CollectionHelper::getData($request,GrmContact::class)), 'Contacts retrieved successfully.');
         } catch (Exception $e) {
             return $this->responseRepository->ResponseError(null, $e->getMessage(), JsonResponse::HTTP_INTERNAL_SERVER_ERROR);
         }

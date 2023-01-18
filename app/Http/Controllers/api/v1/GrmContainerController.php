@@ -2,9 +2,12 @@
 
 namespace App\Http\Controllers\api\v1;
 
+use App\Helpers\CollectionHelper;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\GrmContainerResource;
+use App\Models\GrmContact;
 use App\Models\GrmContainer;
+use App\Models\GrmIncoterm;
 use App\Repositories\ResponseRepository;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
@@ -29,10 +32,10 @@ class GrmContainerController extends Controller
      *
      * @return JsonResponse
      */
-    public function index(): JsonResponse
+    public function index(Request $request): JsonResponse
     {
         try {
-            return $this->responseRepository->ResponseSuccess(GrmContainerResource::collection(GrmContainer::all()), 'Containers retrieved successfully.',);
+            return $this->responseRepository->ResponseSuccess(GrmContainerResource::make(CollectionHelper::getData($request,GrmContainer::class)), 'Containers retrieved successfully.',);
         } catch (Exception $e) {
             return $this->responseRepository->ResponseError(null, $e->getMessage(), JsonResponse::HTTP_INTERNAL_SERVER_ERROR);
         }
